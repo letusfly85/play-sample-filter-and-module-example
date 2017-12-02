@@ -18,7 +18,7 @@ class ExampleHttpRequestHandler @Inject()(errorHandler: HttpErrorHandler,
 ) {
 
   override def routeRequest(request: RequestHeader) = {
-    Logger.logger.info(request.host)
+    Logger.logger.info(s"${getClass.getName} ${request.host}")
     request.host match {
       //case "foo.example.com" => fooRouter.routes.lift(request)
       //case "bar.example.com" => barRouter.routes.lift(request)
